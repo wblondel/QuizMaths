@@ -1,6 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizMaths", "QuizMaths.csproj", "{5F9296D3-9D97-42F8-AEEC-EA4408334A82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizMaths", "QuizMaths\QuizMaths.csproj", "{5F9296D3-9D97-42F8-AEEC-EA4408334A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
