@@ -49,7 +49,7 @@ public class QuizManager
             if (isCorrect) nbRightAnswers++;
         }
         
-        var result = new ResultQuiz(nbQuestions, nbRightAnswers, level, operationType);
+        var result = new QuizResult(nbQuestions, nbRightAnswers, level, operationType);
         _ui.ShowFinalResults(result);
     }
 }

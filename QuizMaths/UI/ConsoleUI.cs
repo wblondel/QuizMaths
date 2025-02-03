@@ -81,16 +81,16 @@ public class ConsoleUI
         }
     }
 
-    public void ShowFinalResults(ResultQuiz result)
+    public void ShowFinalResults(QuizResult quizResult)
     {
         Console.WriteLine("\n=== Results ===");
-        Console.WriteLine($"Level: {result.Level}");
-        Console.WriteLine($"Operation type: {result.TypeOperation}");
-        Console.WriteLine($"Number of questions: {result.NbQuestions}");
-        Console.WriteLine($"Correct answers: {result.NbRightAnswers}");
-        Console.WriteLine($"Incorrect answers: {result.NbWrongAnswers}");
-        Console.WriteLine($"Score: {result.Percentage:F1}%");
-        Console.WriteLine($"Final result: {(result.IsPassed ? "Pass!" : "Fail")}");
+        Console.WriteLine($"Level: {quizResult.Level}");
+        Console.WriteLine($"Operation type: {quizResult.TypeOperation}");
+        Console.WriteLine($"Number of questions: {quizResult.NbQuestions}");
+        Console.WriteLine($"Correct answers: {quizResult.NbRightAnswers}");
+        Console.WriteLine($"Incorrect answers: {quizResult.NbWrongAnswers}");
+        Console.WriteLine($"Score: {quizResult.Percentage:F1}%");
+        Console.WriteLine($"Final result: {(quizResult.IsPassed ? "Pass!" : "Fail")}");
     }
 
     public bool AskPlayAgain()

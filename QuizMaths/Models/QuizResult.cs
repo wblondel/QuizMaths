@@ -2,7 +2,7 @@ using QuizMaths.Enums;
 
 namespace QuizMaths.Models;
 
-public class ResultQuiz
+public class QuizResult
 {
     public int NbQuestions { get; }
     public int NbRightAnswers { get; }
@@ -12,7 +12,7 @@ public class ResultQuiz
     public double Percentage => (double)NbRightAnswers / NbQuestions * 100;
     public bool IsPassed => Percentage >= 60;
 
-    public ResultQuiz(int nbQuestions, int nbRightAnswers, Level level, TypeOperation typeOperation)
+    public QuizResult(int nbQuestions, int nbRightAnswers, Level level, TypeOperation typeOperation)
     {
         NbQuestions = nbQuestions;
         NbRightAnswers = nbRightAnswers;
