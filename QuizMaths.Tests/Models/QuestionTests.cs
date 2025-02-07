@@ -26,12 +26,12 @@ public class QuestionTests
     [InlineData(TypeOperation.Subtraction, "-")]
     [InlineData(TypeOperation.Multiplication, "×")]
     [InlineData(TypeOperation.Division, "÷")]
-    public void Question_GetOperationSymbole_ReturnsCorrectSymbol(
+    public void Question_GetOperationSymbol_ReturnsCorrectSymbol(
         TypeOperation operation,
         string expectedSymbol)
     {
         var question = new Question(10, 5, operation);
 
-        Assert.Equal(expectedSymbol, question.GetOperationSymbole());
+        Assert.Equal(expectedSymbol, question.GetOperationSymbol());
     }
 }

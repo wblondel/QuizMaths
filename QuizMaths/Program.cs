@@ -5,10 +5,17 @@ using QuizMaths.UI;
 
 namespace QuizMaths;
 
-using Enums;
-
+/// <summary>
+/// The Program class serves as the entry point for the QuizMaths application.
+/// This class is responsible for initializing and orchestrating the execution
+/// of the program.
+/// </summary>
 class Program
 {
+    /// <summary>
+    /// Entry point of the application. Initializes and starts the quiz application.
+    /// </summary>
+    /// <param name="args">An array of command-line arguments.</param>
     static void Main(string[] args)
     {
         var random = new Random();

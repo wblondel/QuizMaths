@@ -1,5 +1,8 @@
 namespace QuizMaths.Enums;
 
+/// <summary>
+/// Defines the types of mathematical operations supported in the quiz.
+/// </summary>
 public enum TypeOperation
 {
     Addition = 1,
