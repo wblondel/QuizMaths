@@ -1,3 +1,4 @@
+using QuizMaths.Enums;
 using QuizMaths.Models;
 using QuizMaths.Services;
 using QuizMaths.UI;
@@ -40,8 +41,8 @@ public class QuizManager(ConsoleUI ui, QuestionGenerator questionGenerator)
     private void PlayQuiz()
     {
         int nbQuestions = ui.AskNbQuestions();
-        var level = ui.AskLevel();
-        var operationType = ui.AskTypeOperation();
+        Level level = ui.AskLevel();
+        TypeOperation operationType = ui.AskTypeOperation();
         
         int nbRightAnswers = 0;
 
