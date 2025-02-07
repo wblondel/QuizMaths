@@ -5,7 +5,7 @@ namespace QuizMaths.Models;
 /// <summary>
 /// Represents the result of a quiz, including performance metrics and details about the quiz settings.
 /// </summary>
-public class QuizResult(int nbQuestions, int nbRightAnswers, Level level, TypeOperation typeOperation)
+public readonly struct QuizResult(int nbQuestions, int nbRightAnswers, Level level, TypeOperation typeOperation)
 {
     /// <summary>
     /// Gets the total number of questions in the quiz.

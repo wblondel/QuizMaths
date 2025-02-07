@@ -45,9 +45,8 @@ public class Question
     /// <remarks>
     /// The <see cref="CorrectAnswer"/> property is initialized during the creation of the <see cref="Question"/> object
     /// and is computed based on the <see cref="Operation"/> type (e.g., addition, subtraction, multiplication, or division).
-    /// This property is read-only and cannot be directly modified.
     /// </remarks>
-    public double CorrectAnswer { get; private set; }
+    public double CorrectAnswer { get; init; }
 
     /// <summary>
     /// Represents a mathematical question, consisting of two numbers, an operation, and the correct answer.
@@ -74,8 +73,8 @@ public class Question
             TypeOperation.Addition => Number1 + Number2,
             TypeOperation.Subtraction => Number1 - Number2,
             TypeOperation.Multiplication => Number1 * Number2,
-            TypeOperation.Division => (double)Number1 / Number2,
-            _ => 0
+            TypeOperation.Division => Number2 != 0 ? (double)Number1 / Number2 : double.NaN,
+            _ => throw new InvalidOperationException($"Unsupported operation: {Operation}.")
         };
     }
 
@@ -92,7 +91,7 @@ public class Question
             TypeOperation.Subtraction => "-",
             TypeOperation.Multiplication => "×",
             TypeOperation.Division => "÷",
-            _ => ""
+            _ => throw new InvalidOperationException($"Unsupported operation: {Operation}.")
         };
     }
 }
