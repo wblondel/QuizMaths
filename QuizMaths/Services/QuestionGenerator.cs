@@ -38,7 +38,7 @@ public class QuestionGenerator(Random random)
             Level.Easy => (1, 10),
             Level.Medium => (1, 50),
             Level.Hard => (1, 100),
-            _ => (1, 10)
+            _ => throw new Exception("Invalid level")
         };
     }
 }
