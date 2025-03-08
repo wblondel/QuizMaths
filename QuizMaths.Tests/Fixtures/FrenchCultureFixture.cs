@@ -9,8 +9,8 @@ namespace QuizMaths.Tests.Fixtures
     {
         private readonly CultureInfo _originalCulture;
         private readonly CultureInfo _originalUiCulture;
-        private readonly CultureInfo _originalDefaultCulture;
-        private readonly CultureInfo _originalDefaultUiCulture;
+        private readonly CultureInfo? _originalDefaultCulture;
+        private readonly CultureInfo? _originalDefaultUiCulture;
 
         public FrenchCultureFixture()
         {
