@@ -1,9 +1,11 @@
 using QuizMaths.Enums;
 using QuizMaths.Models;
 using QuizMaths.UI;
+using QuizMaths.Tests.Fixtures;
 
 namespace QuizMaths.Tests.UI;
 
+[Collection("French Culture Collection")]
 public class ConsoleUiTests
 {
     private static ConsoleUI CreateConsoleUiWithInput(string input)
