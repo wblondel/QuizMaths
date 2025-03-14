@@ -18,10 +18,10 @@ class Program
     /// <param name="args">An array of command-line arguments.</param>
     static void Main(string[] args)
     {
-        var random = new Random();
-        var ui = new ConsoleUI();
-        var questionGenerator = new QuestionGenerator(random);
-        var quizManager = new QuizManager(ui, questionGenerator);
+        Random random = new Random();
+        ConsoleUI ui = new ConsoleUI();
+        QuestionGenerator questionGenerator = new QuestionGenerator(random);
+        QuizManager quizManager = new QuizManager(ui, questionGenerator);
         
         quizManager.Start();
     }

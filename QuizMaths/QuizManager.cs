@@ -48,7 +48,7 @@ public class QuizManager(ConsoleUI ui, QuestionGenerator questionGenerator)
 
         for (int i = 1; i <= nbQuestions; i++)
         {
-            var question = questionGenerator.GenerateQuestion(level, operationType);
+            Question question = questionGenerator.GenerateQuestion(level, operationType);
             ui.DisplayQuestion(i, question);
 
             double userAnswer = ui.GetUserAnswer();
@@ -59,7 +59,7 @@ public class QuizManager(ConsoleUI ui, QuestionGenerator questionGenerator)
             if (isCorrect) nbRightAnswers++;
         }
         
-        var result = new QuizResult(nbQuestions, nbRightAnswers, level, operationType);
+        QuizResult result = new QuizResult(nbQuestions, nbRightAnswers, level, operationType);
         ui.ShowFinalResults(result);
     }
 }

@@ -7,8 +7,8 @@ public class QuestionGenerator(Random random)
 {
     public Question GenerateQuestion(Level level, TypeOperation typeOperation)
     {
-        var (min, max) = GetRangeNumbers(level);
-        var currentOperation = typeOperation == TypeOperation.All
+        (int min, int max) = GetRangeNumbers(level);
+        TypeOperation currentOperation = typeOperation == TypeOperation.All
             ? (TypeOperation)random.Next(1, 5)
             : typeOperation;
         
