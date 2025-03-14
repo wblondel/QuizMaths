@@ -148,9 +148,6 @@ public class ConsoleUI
         Console.Write("\nWould you like to play again? (Y/N) ");
         string? input = Console.ReadLine();
 
-        if (string.IsNullOrEmpty(input))
-            return false;
-
-        return input.Trim().StartsWith("Y", StringComparison.OrdinalIgnoreCase);
+        return !string.IsNullOrEmpty(input) && input.Trim().StartsWith("Y", StringComparison.OrdinalIgnoreCase);
     }
 }
