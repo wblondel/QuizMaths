@@ -40,7 +40,7 @@ public class ConsoleUI
         int choiceLevel;
         do
         {
-            Console.WriteLine("Your choice (1-3): ");
+            Console.Write("Your choice (1-3): ");
         } while (!int.TryParse(Console.ReadLine(), out choiceLevel) || !Enum.IsDefined(typeof(Level), choiceLevel));
 
         return (Level)choiceLevel;
