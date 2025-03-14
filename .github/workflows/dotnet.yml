@@ -41,9 +41,12 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal
 
+    - name: Publish .NET projects
+      run: dotnet publish --configuration Release --no-build --output ./publish-output/
+
     - name: Publish artifacts
       uses: actions/upload-artifact@v4
       with:
         name: quiz-app-${{ matrix.os }}
-        path: ./bin/Release/
+        path: ./publish-output/
         if-no-files-found: warn
