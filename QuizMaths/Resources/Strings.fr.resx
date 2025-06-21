@@ -60,4 +60,31 @@
   <data name="ThankYouMessage" xml:space="preserve">
     <value>Merci d'avoir joué !</value>
   </data>
+  <data name="LevelFormat" xml:space="preserve">
+    <value>Niveau : {0}</value>
+  </data>
+  <data name="OperationTypeFormat" xml:space="preserve">
+    <value>Type d'opération : {0}</value>
+  </data>
+  <data name="NumberOfQuestionsFormat" xml:space="preserve">
+    <value>Nombre de questions : {0}</value>
+  </data>
+  <data name="CorrectAnswersFormat" xml:space="preserve">
+    <value>Réponses correctes : {0}</value>
+  </data>
+  <data name="IncorrectAnswersFormat" xml:space="preserve">
+    <value>Mauvaises réponses : {0}</value>
+  </data>
+  <data name="ScoreFormat" xml:space="preserve">
+    <value>Score : {0:F1}%</value>
+  </data>
+  <data name="FinalResultFormat" xml:space="preserve">
+    <value>Résultat final : {0}</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>Réussi</value>
+  </data>
+  <data name="Fail" xml:space="preserve">
+    <value>Échoué</value>
+  </data>
 </root>
