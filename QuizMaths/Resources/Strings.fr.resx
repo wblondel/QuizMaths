@@ -70,7 +70,7 @@
     <value>Nombre de questions : {0}</value>
   </data>
   <data name="CorrectAnswersFormat" xml:space="preserve">
-    <value>Réponses correctes : {0}</value>
+    <value>Bonnes réponses : {0}</value>
   </data>
   <data name="IncorrectAnswersFormat" xml:space="preserve">
     <value>Mauvaises réponses : {0}</value>
