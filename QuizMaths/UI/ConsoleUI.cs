@@ -26,7 +26,7 @@ public class ConsoleUI : IQuizUI
 
         do
         {
-            Console.Write("How many questions would you like (1-10)? ");
+            Console.Write(_localizationService.GetString("NumberOfQuestionsPrompt"));
         } while (!int.TryParse(Console.ReadLine(), out nbQuestions) || nbQuestions < 1 || nbQuestions > 10);
 
         return nbQuestions;
@@ -40,15 +40,16 @@ public class ConsoleUI : IQuizUI
     /// </returns>
     public Level AskLevel()
     {
-        Console.WriteLine("\nChoose a level:");
-        Console.WriteLine("1. Easy");
-        Console.WriteLine("2. Medium");
-        Console.WriteLine("3. Hard");
+        Console.WriteLine();
+        Console.WriteLine(_localizationService.GetString("ChooseLevelPrompt"));
+        Console.WriteLine(_localizationService.GetString("EasyOption"));
+        Console.WriteLine(_localizationService.GetString("MediumOption"));
+        Console.WriteLine(_localizationService.GetString("HardOption"));
 
         int choiceLevel;
         do
         {
-            Console.Write("Your choice (1-3): ");
+            Console.Write(_localizationService.GetString("ChoicePrompt1To3"));
         } while (!int.TryParse(Console.ReadLine(), out choiceLevel) || !Enum.IsDefined(typeof(Level), choiceLevel));
 
         return (Level)choiceLevel;
@@ -63,17 +64,18 @@ public class ConsoleUI : IQuizUI
     /// </returns>
     public TypeOperation AskTypeOperation()
     {
-        Console.WriteLine("\nChoose a type of operation: ");
-        Console.WriteLine("1. Addition");
-        Console.WriteLine("2. Subtraction");
-        Console.WriteLine("3. Multiplication");
-        Console.WriteLine("4. Division");
-        Console.WriteLine("5. All");
+        Console.WriteLine();
+        Console.WriteLine(_localizationService.GetString("ChooseOperationPrompt"));
+        Console.WriteLine(_localizationService.GetString("AdditionOption"));
+        Console.WriteLine(_localizationService.GetString("SubtractionOption"));
+        Console.WriteLine(_localizationService.GetString("MultiplicationOption"));
+        Console.WriteLine(_localizationService.GetString("DivisionOption"));
+        Console.WriteLine(_localizationService.GetString("AllOption"));
 
         int choiceOperation;
         do
         {
-            Console.Write("Your choice (1-5): ");
+            Console.Write(_localizationService.GetString("ChoicePrompt1To5"));
         } while (!int.TryParse(Console.ReadLine(), out choiceOperation) ||
                  !Enum.IsDefined(typeof(TypeOperation), choiceOperation));
 
@@ -87,7 +89,8 @@ public class ConsoleUI : IQuizUI
     /// <param name="question">The question object containing the operands and operation type to be displayed.</param>
     public void DisplayQuestion(int questionNumber, Question question)
     {
-        Console.WriteLine($"\nQuestion {questionNumber}:");
+        Console.WriteLine();
+        Console.WriteLine(_localizationService.GetString("QuestionNumberFormat", questionNumber));
         Console.WriteLine($"{question.Number1} {question.GetOperationSymbol()} {question.Number2} = ?");
     }
 
@@ -103,7 +106,7 @@ public class ConsoleUI : IQuizUI
         double userAnswer;
         do
         {
-            Console.Write("Your answer: ");
+            Console.Write(_localizationService.GetString("YourAnswerPrompt"));
         } while (!double.TryParse(Console.ReadLine(), out userAnswer));
 
         return userAnswer;
@@ -119,11 +122,11 @@ public class ConsoleUI : IQuizUI
     {
         if (isCorrect)
         {
-            Console.WriteLine("✓ Correct!");
+            Console.WriteLine(_localizationService.GetString("CorrectAnswer"));
         }
         else
         {
-            Console.WriteLine($"✗ Incorrect. The right answer is: {correctAnswer}");
+            Console.WriteLine(_localizationService.GetString("IncorrectAnswerFormat", correctAnswer));
         }
     }
 
@@ -135,14 +138,15 @@ public class ConsoleUI : IQuizUI
     /// <param name="quizResult">The result data of the quiz to be displayed.</param>
     public void ShowFinalResults(QuizResult quizResult)
     {
-        Console.WriteLine("\n=== Results ===");
-        Console.WriteLine($"Level: {quizResult.Level}");
-        Console.WriteLine($"Operation type: {quizResult.TypeOperation}");
-        Console.WriteLine($"Number of questions: {quizResult.NbQuestions}");
-        Console.WriteLine($"Correct answers: {quizResult.NbRightAnswers}");
-        Console.WriteLine($"Incorrect answers: {quizResult.NbWrongAnswers}");
-        Console.WriteLine($"Score: {quizResult.Percentage:F1}%");
-        Console.WriteLine($"Final result: {(quizResult.IsPassed ? "Pass!" : "Fail")}");
+        Console.WriteLine();
+        Console.WriteLine(_localizationService.GetString("ResultsHeader"));
+        Console.WriteLine(_localizationService.GetString("LevelFormat", quizResult.Level));
+        Console.WriteLine(_localizationService.GetString("OperationTypeFormat", quizResult.TypeOperation));
+        Console.WriteLine(_localizationService.GetString("NumberOfQuestionsFormat", quizResult.NbQuestions));
+        Console.WriteLine(_localizationService.GetString("CorrectAnswersFormat", quizResult.NbRightAnswers));
+        Console.WriteLine(_localizationService.GetString("IncorrectAnswersFormat", quizResult.NbWrongAnswers));
+        Console.WriteLine(_localizationService.GetString("ScoreFormat", quizResult.Percentage));
+        Console.WriteLine(_localizationService.GetString("FinalResultFormat", quizResult.IsPassed ? _localizationService.GetString("Pass") : _localizationService.GetString("Fail")));
     }
 
 
@@ -153,7 +157,7 @@ public class ConsoleUI : IQuizUI
     /// <returns>True if the user chooses to play again, otherwise false.</returns>
     public bool AskPlayAgain()
     {
-        Console.Write("\nWould you like to play again? (Y/N) ");
+        Console.Write(_localizationService.GetString("PlayAgainPrompt"));
         string? input = Console.ReadLine();
 
         return !string.IsNullOrEmpty(input) && input.Trim().StartsWith("Y", StringComparison.OrdinalIgnoreCase);

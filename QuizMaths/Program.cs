@@ -21,7 +21,7 @@ class Program
         var localizationService = new LocalizationService();
         
         // Switch language based on user preference or system settings
-        // localizationService.SetLanguage("fr"); // For French
+        localizationService.SetLanguage("fr"); // For French
         // localizationService.SetLanguage("en"); // For English (default)
         
         Random random = new Random();
