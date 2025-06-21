@@ -1,13 +1,21 @@
 using QuizMaths.Enums;
 using QuizMaths.Models;
+using QuizMaths.Services;
 
 namespace QuizMaths.UI;
 
 /// <summary>
 /// Represents a console-based user interface for interacting with the quiz application.
 /// </summary>
-public class ConsoleUI
+public class ConsoleUI : IQuizUI
 {
+    private readonly ILocalizationService _localizationService;
+
+    public ConsoleUI(ILocalizationService localizationService)
+    {
+        _localizationService = localizationService;
+    }
+    
     /// Prompts the user to enter the number of questions they would like for the quiz.
     /// Ensures the input is a valid integer between 1 and 10 inclusive.
     /// Repeats the prompt until a valid input is provided.

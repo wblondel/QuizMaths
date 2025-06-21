@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "Terminal Execute",
+    "Projects": [
+      {
+        "Path": "QuizMaths\\QuizMaths.csproj",
+        "Action": "Start",
+        "DebugTarget": "QuizMaths"
+      }
+    ]
+  }
+]

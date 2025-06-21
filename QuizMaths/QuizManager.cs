@@ -7,10 +7,10 @@ namespace QuizMaths;
 
 /// <summary>
 /// The QuizManager class manages the overall flow of the quiz application.
-/// It coordinates between user interactions via ConsoleUI and question generation
+/// It coordinates between user interactions via IQuizUI and question generation
 /// using the QuestionGenerator.
 /// </summary>
-public class QuizManager(ConsoleUI ui, QuestionGenerator questionGenerator)
+public class QuizManager(IQuizUI ui, QuestionGenerator questionGenerator, ILocalizationService localizationService)
 {
     /// <summary>
     /// Starts the quiz game loop.
@@ -29,7 +29,8 @@ public class QuizManager(ConsoleUI ui, QuestionGenerator questionGenerator)
             playAgain = ui.AskPlayAgain();
         }
         
-        Console.WriteLine("Thank you for playing!");
+
+        Console.WriteLine(localizationService.GetString("ThankYouMessage"));
     }
 
     /// <summary>
